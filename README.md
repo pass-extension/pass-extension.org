@@ -1,6 +1,6 @@
 # pass-extension.org
 
-[![][build]][project] [![][online]][domain]
+[![][workflow]][action] [![][online]][domain]
 
 Website for the [pass] extensions, served at <https://pass-extension.org>.
 
@@ -24,6 +24,11 @@ weekly to pick up upstream changes.
 1. Add its repository URL to `repos` in the `Justfile`
 1. Add a `[[params.extensions]]` entry to `hugo.toml`
 1. Add `static/logo/<name>.svg`
+
+[domain]: https://pass-extension.org
+[workflow]: https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fpass-extension%2Fpass-extension.org%2Fbadge%3Fref%3Dmain&style=flat-square
+[action]: https://actions-badge.atrox.dev/pass-extension/pass-extension.org/goto?ref=main
+[online]: https://img.shields.io/website/https/pass-extension.org.svg?style=flat-square
 
 [pass]: https://www.passwordstore.org/
 [Hugo]: https://gohugo.io/
