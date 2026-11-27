@@ -1,0 +1,13 @@
+{{ define "main" }}
+  {{ .Content }}
+  <h2>Extensions</h2>
+  <dl class="extensions">
+    {{ range site.Params.extensions }}
+    <dt>
+      <img src="{{ relURL "logo" }}/{{ .slug }}.svg" alt="">
+      <a href="{{ relURL .slug }}/">pass {{ .slug }}</a> &middot; <a href="{{ relURL "man" }}/{{ .repo }}/">man</a>
+    </dt>
+    <dd>{{ .description }}</dd>
+    {{ end }}
+  </dl>
+{{ end }}

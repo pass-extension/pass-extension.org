@@ -1,0 +1,46 @@
+baseURL = 'https://pass-extension.org/'
+locale = 'en-US'
+title = 'pass extensions'
+disableKinds = ['taxonomy', 'term', 'rss']
+enableRobotsTXT = true
+
+[params]
+  tagline = 'extensions for the standard unix password manager'
+
+  [[params.extensions]]
+    slug = 'import'
+    repo = 'pass-import'
+    url = 'https://github.com/pass-extension/pass-import'
+    description = 'Import data from most existing password managers.'
+  [[params.extensions]]
+    slug = 'otp'
+    repo = 'pass-otp'
+    url = 'https://github.com/pass-extension/pass-otp'
+    description = 'Manage one-time-password (OTP) tokens.'
+  [[params.extensions]]
+    slug = 'tomb'
+    repo = 'pass-tomb'
+    url = 'https://github.com/pass-extension/pass-tomb'
+    description = 'Keep the whole tree of passwords encrypted inside a Tomb.'
+  [[params.extensions]]
+    slug = 'update'
+    repo = 'pass-update'
+    url = 'https://github.com/pass-extension/pass-update'
+    description = 'An easy flow for updating passwords.'
+  [[params.extensions]]
+    slug = 'audit'
+    repo = 'pass-audit'
+    url = 'https://github.com/pass-extension/pass-audit'
+    description = 'Audit your password repository.'
+
+[markup.goldmark.renderer]
+  unsafe = true # READMEs contain raw HTML
+
+[markup.highlight]
+  noClasses = false
+
+[module.hugoVersion]
+  min = '0.169.0'
+
+[security]
+  allowContent = ['^text/html$', '^text/markdown$'] # man pages are pandoc HTML

@@ -1,0 +1,28 @@
+{{/* Extension pages, built from each README. */}}
+{{ range site.Params.extensions }}
+  {{/* ponytail: drop everything above the first "## " (logo, badges, H1); tagline comes from hugo.toml. */}}
+  {{ $md := os.ReadFile (printf ".ext/%s/README.md" .repo) | replaceRE `(?s)\A.*?\n## ` "## " }}
+  {{ $.AddPage (dict
+    "path" .slug
+    "kind" "section"
+    "title" (printf "pass %s" .slug)
+    "params" (dict "description" .description "repo" .url "logo" (printf "logo/%s.svg" .slug))
+    "content" (dict "mediaType" "text/markdown" "value" $md)
+  ) }}
+{{ end }}
+
+{{/* Man pages, pre-rendered to HTML by pandoc. */}}
+{{ $.AddPage (dict "path" "man" "kind" "section" "title" "Manual pages") }}
+{{ if not (os.FileExists ".man") }}
+  {{ errorf ".man is missing" }}
+{{ end }}
+{{ range os.ReadDir ".man" }}
+  {{ $name := strings.TrimSuffix ".html" .Name }}
+  {{ $logo := printf "logo/%s.svg" (strings.TrimPrefix "pass-" $name) }}
+  {{ $.AddPage (dict
+    "path" (printf "man/%s" $name)
+    "title" (printf "%s(1)" $name)
+    "params" (dict "logo" (cond (os.FileExists (printf "static/%s" $logo)) $logo "logo/pass.svg"))
+    "content" (dict "mediaType" "text/html" "value" (os.ReadFile (printf ".man/%s" .Name)))
+  ) }}
+{{ end }}

@@ -1,0 +1,8 @@
+{{- /* Star count of a GitHub repo URL, fetched at build time. Empty on any failure. */ -}}
+{{- $count := "" -}}
+{{- with try (resources.GetRemote (replace . "https://github.com/" "https://api.github.com/repos/")) -}}
+  {{- with .Value -}}
+    {{- $count = (. | transform.Unmarshal).stargazers_count -}}
+  {{- end -}}
+{{- end -}}
+{{- return $count -}}

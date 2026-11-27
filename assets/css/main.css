@@ -1,0 +1,75 @@
+/* Upstream GitHub Pages Slate theme, vendored unmodified in slate/ (CC0):
+ * https://github.com/pages-themes/slate @ f53ef83 (2025-08-22)
+ * Upstream ships it as .scss but it is plain CSS; only the extension changed. */
+@import "slate/slate.css";
+
+/* Site overrides */
+.inner { max-width: 740px; }
+
+#project_title a { color: #fff; }
+
+/* GitHub / GitLab icon banners, with a "Star" banner next to them */
+#gh_banners {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  z-index: 10;
+  display: flex;
+  gap: 6px;
+}
+.icon_banner svg { display: block; width: 16px; height: 16px; fill: currentColor; }
+.icon_banner:hover { color: #ffd54f; }
+.icon_banner, #version_banner, #star_banner {
+  padding: 5px 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background: #373737;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  border-radius: 0 0 2px 2px;
+}
+#version_banner:hover, #star_banner:hover { color: #ffd54f; }
+
+.logo {
+  float: right;
+  width: 110px;
+  margin: 0 0 0 20px;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+nav { display: flex; flex-wrap: wrap; gap: 5px 15px; }
+nav a { color: #f2f2f2; font-weight: 700; }
+
+/* Man page option descriptions: upstream italic is hard to read at length */
+dl dd, dl p { font-style: normal; }
+
+@media screen and (max-width: 480px) {
+  .logo { width: 64px; margin-top: 20px; }
+}
+
+/* Home page extension list */
+.extensions dt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 21px;
+}
+.extensions dd {
+  margin: 0 0 20px 58px;
+  font-style: normal;
+}
+.extensions img {
+  width: 48px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+/* Long README/man tables scroll instead of overflowing on mobile */
+table {
+  display: block;
+  overflow-x: auto;
+}
