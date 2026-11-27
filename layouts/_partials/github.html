@@ -1,0 +1,17 @@
+{{- /* GitHub API JSON for a repo URL (plus an optional path), fetched at build time.
+     Uses $HUGO_GITHUB_TOKEN when set: unauthenticated calls from CI hit the rate limit.
+     Empty, with a warning, on any failure. */ -}}
+{{- $url := printf "%s%s" (replace .repo "https://github.com/" "https://api.github.com/repos/") (.path | default "") -}}
+{{- $opts := dict -}}
+{{- with os.Getenv "HUGO_GITHUB_TOKEN" -}}
+  {{- $opts = dict "headers" (dict "Authorization" (printf "Bearer %s" .)) -}}
+{{- end -}}
+{{- $data := "" -}}
+{{- with try (resources.GetRemote $url $opts) -}}
+  {{- with .Err -}}
+    {{- warnf "GitHub API %s: %s" $url . -}}
+  {{- else with .Value -}}
+    {{- $data = . | transform.Unmarshal -}}
+  {{- end -}}
+{{- end -}}
+{{- return $data -}}

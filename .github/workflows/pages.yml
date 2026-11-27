@@ -32,6 +32,8 @@ jobs:
 
       - name: Build
         run: just build
+        env:
+          HUGO_GITHUB_TOKEN: ${{ github.token }}
 
       - uses: actions/upload-pages-artifact@v5
         with:
