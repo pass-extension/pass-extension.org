@@ -56,11 +56,11 @@
        gradientTransform="matrix(1.2138,0,0,1.2138,4.588,-79.724)"
        gradientUnits="userSpaceOnUse">
       <stop
-         stop-color="#e8fff9"
+         stop-color="#f2f2f2"
          offset="0"
          id="stop2" />
       <stop
-         stop-color="#d0efe7"
+         stop-color="#dcdcdc"
          offset="1"
          id="stop4" />
     </linearGradient>
@@ -84,7 +84,7 @@
          d="m 48.724,141.32 v -11.546 c 0,-6.4144 5.1315,-11.546 11.546,-11.546 6.4144,0 11.546,5.1315 11.546,11.546 v 11.546"
          id="path11"
          inkscape:connector-curvature="0"
-         style="display:inline;fill:none;stroke:#013e5b;stroke-width:5.34899998" />
+         style="display:inline;fill:none;stroke:#212121;stroke-width:5.34899998" />
       <rect
          x="43.07"
          y="132.95"
@@ -93,7 +93,7 @@
          rx="2.2639"
          ry="2.2639"
          id="rect13"
-         style="display:inline;fill:#00c7a0" />
+         style="display:inline;fill:#373737" />
       <g
          transform="matrix(0.74137,0,0,0.74137,63.212,37.568)"
          id="g19"
@@ -103,7 +103,7 @@
            d="m -4.0093,131.55 c -0.66898,0 -1.3381,0.25528 -1.8486,0.76555 -5.737767,6.12513 -11.3764,11.375 -17.643282,17.64034 -1.0207,1.0215 -1.0207,2.6772 0,3.6987 l 17.726,17.724 c 1.0213,1.0207 2.6767,1.0207 3.698,0 l 17.64,-17.641 c 1.0214,-1.0214 1.0214,-2.6773 0,-3.6987 l -17.724,-17.723 c -0.51051,-0.51027 -1.1797,-0.76555 -1.8486,-0.76555 z"
            id="path17"
            inkscape:connector-curvature="0"
-           style="display:inline;fill:#3bdbbc;stroke-width:1.33580005" />
+           style="display:inline;fill:#595959;stroke-width:1.33580005" />
       </g>
     </g>
   </g>
