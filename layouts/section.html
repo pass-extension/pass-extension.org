@@ -1,9 +1,8 @@
 {{ define "main" }}
   {{ .Content }}
-  {{ with .Pages }}
-    {{ if $.Content }}<h2>Guides</h2>{{ end }}
+  {{ if not .Content }}
     <ul>
-      {{ range .ByTitle }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+      {{ range .Pages.ByTitle }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
     </ul>
   {{ end }}
 {{ end }}
